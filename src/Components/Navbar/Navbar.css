@@ -1,0 +1,136 @@
+.nav {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 0 20px;
+    background-color: #161513;
+    position: relative;
+    z-index: 1000;
+    justify-content: flex-start;
+}
+
+@media screen and (min-width: 769px) {
+    .nav {
+        justify-content: center;
+    }
+}
+
+.logo {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.logo img {
+    height: 80px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.5s ease, -webkit-text-fill-color 0.5s ease;
+}
+
+.nav-links li a:hover {
+    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.mobile-menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-menu-icon {
+        display: block;
+    }
+}
+
+.nav-links-mobile {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    z-index: 9999;
+}
+
+.nav-links-mobile.open {
+    max-height: 500px;
+    padding: 30px 0;
+    opacity: 1;
+}
+
+.nav-links-mobile li {
+    text-align: center;
+    list-style: none;
+}
+
+.nav-links-mobile li a {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 0;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.5s ease, -webkit-text-fill-color 0.5s ease;
+}
+
+@media (hover: hover) {
+    .nav-links-mobile li a:hover {
+        background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+}
+
+.nav-links-mobile li a:focus,
+.nav-links-mobile li a:active {
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+}
