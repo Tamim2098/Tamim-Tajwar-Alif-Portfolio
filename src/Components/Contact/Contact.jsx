@@ -13,8 +13,6 @@ const Contact = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    formData.append("access_key", "95eeca81-574d-48c9-b2ce-37f09581c869");
-
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
@@ -35,7 +33,7 @@ const Contact = () => {
         setShowAlert(true);
         event.target.reset(); 
       } else {
-        setAlertMessage("Something went wrong. Please try again.");
+        setAlertMessage(data.message || "Something went wrong. Please try again.");
         setShowAlert(true);
       }
 
@@ -79,6 +77,12 @@ const Contact = () => {
         </div>
 
         <form onSubmit={onSubmit} className="contact-right">
+          <input 
+            type="hidden" 
+            name="access_key" 
+            value="95eeca81-574d-48c9-b2ce-37f09581c869" 
+          />
+
           <label htmlFor="name">Your Name</label>
           <input type="text" placeholder="Enter your name" name="name" required />
           
