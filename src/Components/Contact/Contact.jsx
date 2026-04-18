@@ -65,11 +65,11 @@ const Contact = () => {
           <div className="contact-details">
             <div className="contact-detail">
               <img src={mail_icon} alt="mail" />
-              <p>mahi686569@gmail.com</p>
+              <p>tamimtajwar2008@gmail.com</p>
             </div>
             <div className="contact-detail">
               <img src={call_icon} alt="call" />
-              <p>+880 1745205226</p>
+              <p>+880 1796972098</p>
             </div>
             <div className="contact-detail">
               <img src={location_icon} alt="location" />
